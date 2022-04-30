@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    var mediaTypes = ["Movies" ,"Music", "Ebook", "Podcast"]
     @State var searchText: String = ""
     @State var selected = WrapperType.podcast.rawValue
     @StateObject   var modelView = ModelView()
@@ -55,25 +56,25 @@ struct ContentView: View {
                             selected = WrapperType.movie.rawValue
                             callme()
                         }) {
-                            Text(WrapperType.movie.rawValue)
+                            Text(mediaTypes[0])
                         }
                         Button(action: {
                             selected = WrapperType.music.rawValue
                             callme()
                         }) {
-                            Text(WrapperType.music.rawValue)
+                            Text(mediaTypes[1])
                         }
                         Button(action: {
                             selected = WrapperType.ebook.rawValue
                             callme()
                         }) {
-                            Text(WrapperType.ebook.rawValue)
+                            Text(mediaTypes[2])
                         }
                         Button(action: {
                             selected = WrapperType.podcast.rawValue
                             callme()
                         }) {
-                            Text(WrapperType.podcast.rawValue)
+                            Text(mediaTypes[3])
                         }
                     }
                     Spacer().frame(width:18)
@@ -115,5 +116,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 

@@ -81,7 +81,7 @@ struct ContentView: View {
                 }
                 
                 
-                HStack() {
+                HStack(spacing: 0.0) {
                     List(modelView.results ?? [], id: \.trackId) { item in
                         NavigationLink(
                             destination: DetailView(object: item)) {
@@ -89,6 +89,7 @@ struct ContentView: View {
                                     AsyncImage(url: URL(string: "\(item.artworkUrl100)"))
                                     Text(item.trackName)
                                         .font(.headline)
+                                        .padding()
                                     Text(item.collectionName)
                                 }
                             }
